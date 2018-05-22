@@ -26,12 +26,10 @@
                 <div class="form-group">
                     <label for="nameStudent">Naam leerling</label>
                     <input type="text" class="form-control" id="nameStudent" placeholder="">
-
                 </div>
                 <div class="form-group">
                     <label for="birthStudent">Geboortedatum</label>
                     <input type="date" class="form-control" id="birthStudent" placeholder="datum">
-
                 </div>
                 <button type="submit" id="next-button" class="btn btn-primary">Volgende</button>
             </form>
@@ -46,8 +44,9 @@
 
             <form>
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>...</option>
+                    <label for="studentEducation">Opleiding:</label>
+                    <select class="form-control" id="studentEducation">
+                        <option selected>...</option>
                         <option>VMBO</option>
                         <option>HAVO</option>
                         <option>VWO</option>
@@ -56,11 +55,12 @@
                     </select>
                 </div>
             </form>
-            <div class="vmbo hidden">
+            <div class="vmbo">
                 <form>
                     <div class="form-group">
+                        <label for="studentLevel">Niveau:</label>
                         <select class="form-control" id="level">
-                            <option>...</option>
+                            <option selected>...</option>
                             <option>BB</option>
                             <option>KB</option>
                             <option>GL</option>
@@ -73,49 +73,59 @@
                             <option>TL + LWOO</option>
                             <option>LWT + LWOO</option>
                         </select>
-
+                    </div>
+                    <div class="form-group">
+                        <label for="studentSector">Sector</label>
                         <select class="form-control" id="sector">
-                            <option>...</option>
+                            <option selected>...</option>
                             <option>Economie</option>
                             <option>Landbouw</option>
                             <option>Techniek</option>
                             <option>Zorg en Welzijn</option>
                         </select>
-                        <label for="mviStudent">
-                            Heeft de leerling een keuzevak MVI gedaan?</label>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="mviNo" name="mviNo" class="custom-control-input">
-                            <label class="custom-control-label" for="mviNo">Nee</label>
-                        </div>
+                    </div>
 
+                    <div class="form-group">
+                        <label for="mviStudent"> Heeft de leerling een keuzevak MVI gedaan?</label>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mviYes" name="mviYes" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadio1">Ja</label>
+                            <input type="radio" id="customRadio1" name="mviYesOrNo" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Nee</label>
                         </div>
-
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="mviYesOrNo" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2">Ja,</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="nameStudent">zo ja, welke :</label>
                         <input type="text" class="form-control" id="mviIfYes" placeholder="">
-
+                    </div>    
+                    <div class="form-group">    
+                        <label for="nameStudent">Diploma behaald / te behalen op:</label>
+                        <input type="date" class="form-control" id="studentDiploma" placeholder="datum">
+                    </div>    
                     </div>
                 </form>
             </div>
             <div class="havo hidden">
                 <div class="vmbo">
-                    <div class="form-group">
-                        <select class="form-control" id="level">
-                            <option>BB</option>
-                            <option>KB</option>
-                            <option>GL</option>
-                            <option>TL</option>
-                            <option>LWT</option>
-                            <option>BB + LWOO</option>
-                            <option>BB + LWOO</option>
-                            <option>KB + LWOO</option>
-                            <option>GL + LWOO</option>
-                            <option>TL + LWOO</option>
-                            <option>LWT + LWOO</option>
-                        </select>
-                    </div>
+                    <form>
+                        <div class="form-group">
+                            <select class="form-control" id="level">
+                                <option>BB</option>
+                                <option>KB</option>
+                                <option>GL</option>
+                                <option>TL</option>
+                                <option>LWT</option>
+                                <option>BB + LWOO</option>
+                                <option>BB + LWOO</option>
+                                <option>KB + LWOO</option>
+                                <option>GL + LWOO</option>
+                                <option>TL + LWOO</option>
+                                <option>LWT + LWOO</option>
+                            </select>
+                        </div>
+                    </form>
                 </div>
                 <div class="vwo"></div>
                 <div class="mbo"></div>
@@ -180,7 +190,7 @@
                     <div class="col">
                         <label for="genderMentor">Gender</label>
                         <select class="form-control">
-                            <option>...</option>
+                            <option selected>...</option>
                             <option>Man</option>
                             <option>Vrouw</option>
                         </select>
@@ -211,6 +221,7 @@
                 <div class="form-group">
                     <label for="telContact">Telefonisch contact gewenst</label>
                     <select class="form-control">
+                        <option selected>...</option>
                         <option>Ja</option>
                         <option>Nee</option>
                     </select>
