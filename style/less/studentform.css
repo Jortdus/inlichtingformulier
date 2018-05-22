@@ -1,0 +1,57 @@
+html p {
+  font-family: 'Raleway', 'Dosis', sans-serif;
+}
+html h1 {
+  font-family: 'Raleway', 'Dosis', sans-serif;
+}
+html label {
+  font-family: 'Raleway', 'Dosis', sans-serif;
+}
+.body {
+  background-color: #202020;
+  margin: 0 auto;
+  width: 50%;
+}
+.main {
+  margin: 0 auto;
+  width: 50%;
+  border: 2px solid #a8a5a5;
+  border-radius: 8px;
+  margin-top: 15px;
+  background: #fff;
+}
+@media (max-width: 768px) {
+  .main {
+    width: 100%;
+    border: none;
+  }
+  .main h1 {
+    font-size: 20px;
+  }
+  .main p {
+    font-size: 8px;
+  }
+}
+.form-group {
+  padding: 10px;
+  max-width: 750px;
+}
+.studentform {
+  margin: 50px;
+  padding: 5px;
+  user-select: none;
+  max-width: 750px;
+}
+.form-toptext {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+#next-button {
+  margin-left: 11px;
+  background-color: #FF1293;
+  color: white;
+  border-color: #FF1293;
+}
+.hidden {
+  display: none;
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style/less/studentform.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway:500" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <title>Inlichtingformulier schooljaar 2018-2019</title>
+</head>
+
+<body>
+
+    <div class="main who">
+        <div class="studentform">
+            <div class="form-toptext">
+                <h1>Inlichtingformulier schooljaar 2018-2019</h1>
+                <p1>In te vullen door Decaan / Mentor
+                    <small id="infoStudent" class="form-text text-muted">Elk veld is verplicht te worden ingevuld.</small>
+                </p1>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="nameStudent">Naam leerling</label>
+                    <input type="text" class="form-control" id="nameStudent" placeholder="">
+
+                </div>
+                <div class="form-group">
+                    <label for="birthStudent">Geboortedatum</label>
+                    <input type="date" class="form-control" id="birthStudent" placeholder="datum">
+
+                </div>
+                <button type="submit" id="next-button" class="btn btn-primary">Volgende</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main study">
+        <div class="studentform">
+            <div class="form-toptext">
+                <h2>Welke opleiding volgt de leerling?</h2>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>...</option>
+                        <option>VMBO</option>
+                        <option>HAVO</option>
+                        <option>VWO</option>
+                        <option>MBO</option>
+                        <option>Anders</option>
+                    </select>
+                </div>
+            </form>
+            <div class="vmbo hidden">
+                <form>
+                    <div class="form-group">
+                        <select class="form-control" id="level">
+                            <option>...</option>
+                            <option>BB</option>
+                            <option>KB</option>
+                            <option>GL</option>
+                            <option>TL</option>
+                            <option>LWT</option>
+                            <option>BB + LWOO</option>
+                            <option>BB + LWOO</option>
+                            <option>KB + LWOO</option>
+                            <option>GL + LWOO</option>
+                            <option>TL + LWOO</option>
+                            <option>LWT + LWOO</option>
+                        </select>
+
+                        <select class="form-control" id="sector">
+                            <option>...</option>
+                            <option>Economie</option>
+                            <option>Landbouw</option>
+                            <option>Techniek</option>
+                            <option>Zorg en Welzijn</option>
+                        </select>
+                        <label for="mviStudent">
+                            Heeft de leerling een keuzevak MVI gedaan?</label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="mviNo" name="mviNo" class="custom-control-input">
+                            <label class="custom-control-label" for="mviNo">Nee</label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="mviYes" name="mviYes" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1">Ja</label>
+                        </div>
+
+                        <label for="nameStudent">zo ja, welke :</label>
+                        <input type="text" class="form-control" id="mviIfYes" placeholder="">
+
+                    </div>
+                </form>
+            </div>
+            <div class="havo hidden">
+                <div class="vmbo">
+                    <div class="form-group">
+                        <select class="form-control" id="level">
+                            <option>BB</option>
+                            <option>KB</option>
+                            <option>GL</option>
+                            <option>TL</option>
+                            <option>LWT</option>
+                            <option>BB + LWOO</option>
+                            <option>BB + LWOO</option>
+                            <option>KB + LWOO</option>
+                            <option>GL + LWOO</option>
+                            <option>TL + LWOO</option>
+                            <option>LWT + LWOO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="vwo"></div>
+                <div class="mbo"></div>
+                <div class="other"></div>
+                <button type="submit" id="next-button" class="btn btn-primary">Volgende</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="main impression">
+        <div class="studentform">
+            <div class="form-toptext">
+                <h2>Hoe is uw indruk op school over de leerling?</h2>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="nameStudent">Naam leerling</label>
+                    <input type="text" class="form-control" id="nameStudent" placeholder="">
+                    <small id="infoStudent" class="form-text text-muted">Naam van leerling</small>
+                </div>
+                <div class="form-group">
+                    <label for="birthStudent">Geboortedatum</label>
+                    <input type="date" class="form-control" id="birthStudent" placeholder="datum">
+                </div>
+                <button type="submit" id="next-button" class="btn btn-primary">Volgende</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main special">
+        <div class="studentform">
+            <div class="form-toptext">
+                <h2>Bijzonderheden (i.v.m. de mogelijkheden tot extra begeleiding)</h2>
+            </div>
+            <form action="/pages/selection.html">
+                <div class="form-group">
+                    <label for="nameStudent">Naam leerling</label>
+                    <input type="text" class="form-control" id="nameStudent" placeholder="">
+                    <small id="infoStudent" class="form-text text-muted">Naam van leerling</small>
+                </div>
+                <div class="form-group">
+                    <label for="birthStudent">Geboortedatum</label>
+                    <input type="date" class="form-control" id="birthStudent" placeholder="datum">
+                </div>
+                <button type="submit" id="next-button" class="btn btn-primary">Volgende</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="main you">
+        <div class="studentform">
+            <div class="form-toptext">
+                <h2>Uw gegevens</h2>
+            </div>
+            <form>
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="nameMentor">Naam</label>
+                        <input type="text" class="form-control" id="nameMentor" placeholder="">
+                    </div>
+                    <div class="col">
+                        <label for="genderMentor">Gender</label>
+                        <select class="form-control">
+                            <option>...</option>
+                            <option>Man</option>
+                            <option>Vrouw</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="functionMentor">Functie</label>
+                    <input type="text" class="form-control" id="functionMentor" placeholder="">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailMentor">E-mail</label>
+                    <input type="email" class="form-control" id="emailMentor" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="nameSchool">Naam school</label>
+                    <input type="text" class="form-control" id="nameSchool" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="placeSchool">Plaats</label>
+                    <input type="text" class="form-control" id="placeSchool" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="telMentor">Telefoon nummer</label>
+                    <input type="tel" class="form-control" id="telMentor" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="telContact">Telefonisch contact gewenst</label>
+                    <select class="form-control">
+                        <option>Ja</option>
+                        <option>Nee</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="send-button" class="btn btn-primary">Verstuur</button>
+            </form>
+
+        </div>
+    </div>
+    <script src="/script/next.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
