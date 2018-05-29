@@ -3,22 +3,37 @@ html p {
 }
 html h1 {
   font-family: 'Raleway', 'Dosis', sans-serif;
+  font-size: 2.2rem;
+}
+html h2 {
+  font-family: 'Raleway', 'Dosis', sans-serif;
+  font-size: 1.8rem;
+}
+html h4 {
+  font-family: 'Raleway', 'Dosis', sans-serif;
+  font-size: 1.2rem;
 }
 html label {
   font-family: 'Raleway', 'Dosis', sans-serif;
 }
-.body {
-  background-color: #202020;
-  margin: 0 auto;
-  width: 50%;
+body {
+  background-color: #cb1212;
 }
 .main {
-  margin: 0 auto;
+  margin: 5px auto 5px auto;
   width: 50%;
-  border: 2px solid #a8a5a5;
-  border-radius: 8px;
-  margin-top: 15px;
+  border: 2px solid #c9c9c9;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   background: #fff;
+}
+.main button,
+.main button:hover,
+.main button:active {
+  background-color: #FF1293;
+  color: white;
+  border-color: #FF1293;
+  min-width: 100px;
 }
 @media (max-width: 768px) {
   .main {
@@ -32,26 +47,96 @@ html label {
     font-size: 8px;
   }
 }
-.form-group {
-  padding: 10px;
-  max-width: 750px;
+#adminLink {
+  padding: 5px;
+  color: #FF1293;
+}
+.footer-flex {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.footer-flex .right {
+  margin-left: 10px;
+}
+form {
+  padding-left: 10px;
 }
 .studentform {
-  margin: 50px;
-  padding: 5px;
-  user-select: none;
-  max-width: 750px;
+  padding-top: 30px;
+  margin: 30px auto;
+  width: 80%;
+  min-height: 700px;
+  position: relative;
 }
 .form-toptext {
   margin-bottom: 10px;
   padding: 5px;
 }
-#next-button {
-  margin-left: 11px;
-  background-color: #FF1293;
-  color: white;
-  border-color: #FF1293;
-}
 .hidden {
   display: none;
+}
+#snackbar {
+  font-family: 'Raleway', 'Dosis', sans-serif;
+  font-size: 1rem;
+  display: none;
+  min-width: 400px;
+  margin-left: -125px;
+  background-color: #FF1293;
+  color: white;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+}
+#snackbar.show {
+  display: block;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

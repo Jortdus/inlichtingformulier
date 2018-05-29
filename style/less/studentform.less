@@ -1,4 +1,5 @@
 @button-color : #FF1293;
+@ma-color :  #FF1293;
 @font-family  : 'Raleway', 'Dosis', sans-serif;
 @screen-sm : 768px;
 @screen-md : 992px;
@@ -13,26 +14,46 @@
 
         h1 {
             font-family: @font-family;
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            font-family: @font-family;
+            font-size: 1.8rem;
+        }
+
+        h4 {
+            font-family: @font-family;
+            font-size: 1.2rem;
         }
 
         label {
             font-family: @font-family;
-        
+
         }
+
     }
-    .body {
-        background-color: #202020;
-        margin: 0 auto;
-        width: 50%;
+    body {
+        background-color: #cb1212;
+      
     }  
 
+
+
     .main {
-        margin: 0 auto;
+        margin: 5px auto 5px auto;
         width: 50%;
-        border: 2px solid rgb(168, 165, 165);
-        border-radius: 8px;
-        margin-top: 15px;
+        border: 2px solid rgb(201, 201, 201);
+        border-radius: 4px;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
         background: #fff;
+
+        button, button:hover, button:active {
+            background-color: @button-color;
+            color: white;
+            border-color: @button-color;
+            min-width: 100px;
+        }
 
         @media (max-width: @screen-sm) {
             
@@ -46,10 +67,7 @@
             p {
                 font-size: 8px;
             }
-
         }
-
-        
     }
 
     .who {
@@ -60,17 +78,36 @@
 
     }
 
+    #adminLink {
+        padding: 5px;
+        color: #FF1293
+    }
 
-    .form-group {
-        padding: 10px;
-        max-width: 750px;
+    .footer-flex {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-bottom: 10px;
+
+
+        .right {
+            margin-left: 10px;
+        }
+
+    }
+
+    form {
+        padding-left: 10px;
     }
 
     .studentform {
-        margin: 50px;
-        padding: 5px;
-        user-select: none;
-        max-width: 750px;
+        padding-top: 30px;
+        margin: 30px auto;
+        width: 80%;
+        min-height: 700px;
+        position: relative;
 
     }
 
@@ -79,14 +116,49 @@
         padding: 5px;
     }
 
-    #next-button {
-        margin-left: 11px;
-        background-color: @button-color;
-        color: white;
-        border-color: @button-color;
-    }
-
     .hidden {
         display: none;
     }  
 
+    #snackbar {
+        font-family: @font-family;
+        font-size: 1rem;
+        display: none;
+        min-width: 400px; 
+        margin-left: -125px;
+        background-color: @ma-color;
+        color: white;
+        text-align: center; 
+        border-radius: 2px; 
+        padding: 16px; 
+        position: fixed;
+        z-index: 1;
+        left: 50%; 
+        bottom: 30px;
+    }
+
+    #snackbar.show {
+        display: block;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+   
+    @-webkit-keyframes fadein {
+        from {bottom: 0; opacity: 0;} 
+        to {bottom: 30px; opacity: 1;}
+    }
+    
+    @keyframes fadein {
+        from {bottom: 0; opacity: 0;}
+        to {bottom: 30px; opacity: 1;}
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {bottom: 30px; opacity: 1;} 
+        to {bottom: 0; opacity: 0;}
+    }
+    
+    @keyframes fadeout {
+        from {bottom: 30px; opacity: 1;}
+        to {bottom: 0; opacity: 0;}
+    }   
