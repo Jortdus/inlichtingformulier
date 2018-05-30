@@ -1,31 +1,29 @@
+html {
+  color: #000000;
+  height: 100vh;
+}
 html p {
-  font-family: 'Raleway', 'Dosis', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 html h1 {
-  font-family: 'Raleway', 'Dosis', sans-serif;
-  font-size: 2.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.3rem;
 }
 html h2 {
-  font-family: 'Raleway', 'Dosis', sans-serif;
-  font-size: 1.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
 }
 html h4 {
-  font-family: 'Raleway', 'Dosis', sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
 }
 html label {
-  font-family: 'Raleway', 'Dosis', sans-serif;
-}
-body {
-  background-color: #cb1212;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
 }
 .main {
   margin: 5px auto 5px auto;
-  width: 50%;
-  border: 2px solid #c9c9c9;
-  border-radius: 4px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  background: #fff;
+  width: 40%;
 }
 .main button,
 .main button:hover,
@@ -35,52 +33,72 @@ body {
   border-color: #FF1293;
   min-width: 100px;
 }
+.main input[type=text],
+.main input[type=date],
+.main select {
+  font-weight: 300;
+  font-size: 15px;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.01), 0px 0px 3px rgba(0, 0, 0, 0.2);
+  background: white;
+  width: 50%;
+}
 @media (max-width: 768px) {
   .main {
     width: 100%;
     border: none;
+    min-height: 0;
+    box-shadow: none;
   }
   .main h1 {
-    font-size: 20px;
-  }
-  .main p {
-    font-size: 8px;
+    font-size: 1.5rem;
   }
 }
 #adminLink {
-  padding: 5px;
-  color: #FF1293;
+  color: #555555;
+  padding: 5px 0 0 5px;
+}
+@media (max-width: 768px) {
+  #adminLink {
+    display: none;
+  }
+}
+#bottomDiv {
+  padding-bottom: 38px;
 }
 .footer-flex {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
 }
 .footer-flex .right {
   margin-left: 10px;
 }
-form {
-  padding-left: 10px;
-}
 .studentform {
-  padding-top: 30px;
-  margin: 30px auto;
-  width: 80%;
-  min-height: 700px;
+  padding-top: 15%;
   position: relative;
 }
 .form-toptext {
   margin-bottom: 10px;
-  padding: 5px;
+}
+.form-toptext p {
+  padding-left: 10px;
+}
+.form-group {
+  padding: 10px;
+  border: 1px solid #fbfbfb9c;
+  border-radius: 4px;
+  background-color: #fbfbfb9c;
 }
 .hidden {
   display: none;
 }
+label[class=error] {
+  color: #FF1293;
+  font-size: 0.95rem;
+}
 #snackbar {
-  font-family: 'Raleway', 'Dosis', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   display: none;
   min-width: 400px;
