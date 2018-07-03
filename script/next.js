@@ -33,8 +33,20 @@ $(document).ready(function () {
             vmboSector : {
                 required: true,
             },
+            lwoo : {
+                required: true,
+            },
             mviYesOrNo : {
                 required: true,     
+            },
+            mviIfYes : {
+                required: function(element) {
+                    if($("#mviChoice option:selected").text() == 'Ja') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } 
             },
         },
         messages: {
@@ -44,22 +56,137 @@ $(document).ready(function () {
             vmboSector : {
                 required: "Dit veld is verplicht",
             },
+            lwoo : {
+                required: "Dit veld is verplicht",
+            },
             mviYesOrNo : {
                 required: "Dit veld is verplicht",     
             },
+            mviIfYes : {
+                required: "Dit veld is verplicht",
+            },
         },
-        errorPlacement: function(error, element) {
-            if (element.attr("name") == "mviYesOrNo" ) {
-                error.insertAfter("#mviError");
-            } else if (element.attr("name") == "vmboLevel") {
-                error.insertAfter("#levelError")
-            } else {
-                error.insertAfter(element);
+    });
+
+    $("#havoForm").validate({
+        rules: {
+            transitionHavo : {
+                required: true,
+            },
+        },
+        messages: {
+            transitionHavo : {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#vwoForm").validate({
+        rules: {
+            transitionVwo : {
+                required: true,
+            },
+        },
+        messages: {
+            transitionVwo : {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#mboForm").validate({
+        rules: {
+            studentEducationLevel : {
+                required: true,
+            },
+            studentEducationRoad : {
+                required: true,
+            },
+        },
+        messages: {
+            studentEducationLevel : {
+                required: "Dit veld is verplicht",
+            },
+            studentEducationRoad : {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#otherForm").validate({
+        rules: {
+            studentEducationOther : {
+                required: true,
+            },
+        },
+        messages: {
+            studentEducationOther : {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#postureForm").validate({
+        rules: {
+            studentPostureConc : {
+                required: true,
+            },
+            studentPostureTempo : {
+                required: true,
+            },
+            studentPostureSelf : {
+                required: true,
             }
-        }
-                
-        
-        
+        },
+        messages: {
+            studentPostureConc : {
+                required: "Dit veld is verplicht",
+            },
+            studentPostureTempo : {
+                required: "Dit veld is verplicht",
+            },
+            studentPostureSelf : {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#attitudeForm").validate({
+        rules: {
+            studentAttitudeMotiv : {
+                required: true,
+            },
+            studentAttitudeEndur : {
+                required: true,
+            },
+        },
+        messages: {
+            studentAttitudeMotiv : {
+                required: "Dit veld is verplicht",
+            },
+            studentAttitudeEndur : {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#skillsForm").validate({
+        rules: {
+            studentSkillsCom : {
+                required: true,
+            },
+            studentSkillsSocial : {
+                required: true,
+            },
+        },
+        messages: {
+            studentSkillsCom : {
+                required: "Dit veld is verplicht",
+            },
+            studentSkillsSocial : {
+                required: "Dit veld is verplicht",
+            },
+        },
     });
 
 
@@ -101,31 +228,63 @@ $(document).ready(function () {
         }
     });
 
-    $("#mviYesOrNo input").change(function () {
-        $mviValue = $('input[name=mviYesOrNo]:checked', '#mviYesOrNo').val();
-        if ($mviValue == '2') {
-            $(".mviIfYes").show();
-        } else if ($mviValue == '1') {
+    $("#havoButton").click(function () {
+        if ($("#havoForm").valid() == true) {
+            $(".main.study").hide();
+            $(".main.impression").show();
+        }
+    });
+
+    $("#vwoButton").click(function () {
+        if ($("#vwoForm").valid() == true) {
+            $(".main.study").hide();
+            $(".main.impression").show();
+        }
+    });
+
+    $("#mboButton").click(function () {
+        if ($("#mboForm").valid() == true) {
+            $(".main.study").hide();
+            $(".main.impression").show();
+        }
+    });
+
+    $("#otherButton").click(function () {
+        if ($("#otherForm").valid() == true) {
+            $(".main.study").hide();
+            $(".main.impression").show();
+        }
+    });
+
+    $("#mviChoice").change(function () {
+        $mviValue = $("#mviChoice option:selected").text();
+        if ($mviValue == 'Ja') {
+            $(".mviIfYes").show().validate();
+        } else if ($mviValue == 'Nee') {
             $(".mviIfYes").hide();
         }
-        });
-
-   
+    });
 
     $("#posture-button-next").click(function () {
-        $(".posture").hide();
-        $(".attitude").show();
+        if ($("#postureForm").valid() == true) {
+            $(".posture").hide();
+            $(".attitude").show();
+        }
     });
 
     $("#attitude-button-next").click(function () {
-        $(".attitude").hide();
-        $(".skills").show();
+        if ($("#attitudeForm").valid() == true) {
+            $(".attitude").hide();
+            $(".skills").show();
+        }
     });
 
     $("#skills-button-next").click(function () {
-        $(".main.impression").hide();
-        $(".main.special").show();
-        $(".restrictionOne").show();
+        if ($("#skillsForm").valid() == true) {
+            $(".main.impression").hide();
+            $(".main.special").show();
+            $(".restrictionOne").show();
+        }
     });
 
     $("#restrictionOne-button-next").click(function () {

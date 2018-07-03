@@ -12,7 +12,7 @@
     <title>Inlichtingformulier schooljaar 2018-2019</title>
 </head>
         <small id="adminLink">
-            <a id="adminLink" href="/admin.html">Beheer</a>
+            <a id="adminLink" href="/login.html">Beheer</a>
         </small>
 <body>
     <div class="container-main">
@@ -20,7 +20,8 @@
         <div class="main who hidden">
             <div class="studentform">
                 <div class="form-toptext">
-                    <h1>Inlichtingformulier schooljaar 2018-2019</h1>
+                    <h1>Inlichtingformulier</h1> 
+                    <h2>Mediacollege</h2>
                     <p>Graag volledig invullen</p>
                 </div>
                 <form id="whoForm">
@@ -48,7 +49,7 @@
 
                 <form id="educationForm">
                     <div class="form-group">
-                        <label for="studentEducation">Opleiding:</label>
+                        <label for="studentEducation">Opleiding</label>
                         <select class="form-control" id="studentEducation" name="studentEducation">
                             <option value="">...</option>
                             <option value="1">VMBO</option>
@@ -63,8 +64,8 @@
                 <div class="vmbo hidden">
                     <form id="vmboForm">
                         <div class="form-group">
-                            <label for="studentLevel">Niveau:</label>
-                            <select name="vmboLevel" class="form-control" id="level">
+                            <label for="vmboLevel">Niveau</label>
+                            <select name="vmboLevel" class="form-control" id="vmboLevel">
                                 <option value="">...</option>
                                 <option value="1">BB</option>
                                 <option value="2">KB</option>
@@ -72,10 +73,18 @@
                                 <option value="4">TL</option>
                                 <option value="5">LWT</option>
                             </select>
-                            <div id="levelError">
-                                <label for="plusLwoo">+ LWOO</label>
-                                <input type="checkbox" id="plusLwoo">
-                            </div>
+                        </div>
+
+                        <div class="form-group">    
+                            <label for="lwoo">LWOO</label>
+                            <select name="lwoo" class="form-control" id="lwoo">
+                                <option value="">...</option>
+                                <option value="1">Nee</option>
+                                <option value="2">Ja</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label for="studentSector">Sector</label>
                             <select name="vmboSector" class="form-control" id="sector">
                                 <option value="">...</option>
@@ -88,17 +97,15 @@
 
                         <div class="form-group" id="mviYesOrNo">
                             <label for="mviStudent"> Heeft de leerling een keuzevak MVI gedaan?</label>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="mviYes" name="mviYesOrNo" value="1" class="custom-control-input">
-                                <label class="custom-control-label" for="mviYes">Nee</label>
-                            </div>
-                            <div id="mviError" class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="mviNo" name="mviYesOrNo" value="2" class="custom-control-input">
-                                <label class="custom-control-label" for="mviNo">Ja,</label>
-                            </div>
+                            <select name="mviYesOrNo" class="form-control" id="mviChoice">
+                                <option value="">...</option>
+                                <option value="1">Nee</option>
+                                <option value="2">Ja</option>
+                            </select>
+                            
                             <div class="mviIfYes hidden" id="ifYes" class="form-group">
-                                <label for="nameStudent">zo ja, welke :</label>
-                                <input type="text" class="form-control" id="mviIfYes" placeholder="">
+                                <label for="nameStudent"></label>
+                                <input type="text" name="mviIfYes" class="form-control" id="mviIfYes" placeholder="Keuzevak..">
                             </div>
                         </div>
 
@@ -114,68 +121,86 @@
                 </div>
 
                 <div class="havo hidden">
-                    <form>
+                    <form id="havoForm">
                         <div class="form-group">
-                            <label for="nameStudent">Diploma behaald / te behalen op:</label>
+                            <label for="studentDiplomaHavo">Diploma behaald / te behalen op:</label>
                             <input type="date" class="form-control" id="studentDiplomaHavo" placeholder="datum">
+                        </div>
+
+                        <div class="form-group">
+                           <label for="transitionHavo">Overgangsbewijs van leerjaar:</label>
+                           <select class="form-control" name="transitionHavo" id="transitionYearHavo">
+                               <option value="">...</option>
+                               <option value="1">3 naar 4</option>
+                               <option value="2">4 naar 5</option>
+                           </select>
                         </div>
                     </form>
                     <footer class="footer-flex">
                         <button type="button" class="education-button-back btn">Terug</button>
-                        <button type="button" class="education-button-next btn right">Volgende</button>
+                        <button type="button" id="havoButton" class="education-button-next btn right">Volgende</button>
                     </footer>
                 </div>
 
                 <div class="vwo hidden">
-                    <form>
+                    <form id="vwoForm">
                         <div class="form-group">
                             <label for="nameStudent">Diploma behaald / te behalen op:</label>
                             <input type="date" class="form-control" id="studentDiplomaVwo" placeholder="datum">
                         </div>
+
+                        <div class="form-group">
+                            <label for="transitionVwo">Overgangsbewijs van leerjaar:</label>
+                            <select class="form-control" name="transitionVwo" id="transitionYearVwo">
+                                <option value="">...</option>
+                                <option value="1">3 naar 4</option>
+                                <option value="2">4 naar 5</option>
+                            </select>
+                        </div>
                     </form>
                     <footer class="footer-flex">
                         <button type="button" class="education-button-back btn">Terug</button>
-                        <button type="button" class="education-button-next btn right">Volgende</button>
+                        <button type="button" id="vwoButton" class="education-button-next btn right">Volgende</button>
                     </footer>
                 </div>
 
                 <div class="mbo hidden">
-                    <form>
+                    <form id="mboForm">
                         <div class="form-group">
-                            <label for="studentEducation">Opleidingsniveau:</label>
-                            <select class="form-control" id="studentEducationLevel">
-                                <option selected>...</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                            <label for="studentEducation">Opleidingsniveau</label>
+                            <select class="form-control" name="studentEducationLevel" id="studentEducationLevelValue">
+                                <option value="">...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="studentEducation">Leerweg:</label>
-                            <select class="form-control" id="studentEducationRoad">
-                                <option selected>...</option>
-                                <option>BOL</option>
-                                <option>BBL</option>
+                            <label for="studentEducation">Leerweg</label>
+                            <select class="form-control" id="studentEducationRoadchoice"  name="studentEducationRoad">
+                                <option value="">...</option>
+                                <option value="1">BOL</option>
+                                <option value="2">BBL</option>
                             </select>
                         </div>
                     </form>
                     <footer class="footer-flex">
                         <button type="button" class="education-button-back btn">Terug</button>
-                        <button type="button" class="education-button-next btn right">Volgende</button>
+                        <button type="button" id="mboButton" class="education-button-next btn right">Volgende</button>
                     </footer>
                 </div>
 
                 <div class="other hidden">
-                    <form>
+                    <form id="otherForm">
                         <div class="form-group">
                             <label for="studentEducation">Andere opleiding:</label>
-                            <input type="text" class="form-control" id="studentEducationOther" placeholder="">
+                            <input type="text" class="form-control" id="studentEducationOther" name="studentEducationOther" placeholder="">
                         </div>
                     </form>
                     <footer class="footer-flex">
                         <button type="button" class="education-button-back btn">Terug</button>
-                        <button type="button" class="education-button-next btn right">Volgende</button>
+                        <button type="button" id="otherButton" class="education-button-next btn right">Volgende</button>
                     </footer>
                 </div>
             </div>
@@ -188,7 +213,7 @@
                         <h2>Hoe is uw indruk op school over de leerling?</h2>
                         <h4>Werkhouding</h4>
                     </div>
-                    <form>
+                    <form id="postureForm">
                         <div class="form-group">
                             <p>
                                 <strong>Concentratie:</strong>
@@ -214,7 +239,7 @@
 
                         <div class="form-group">
                             <p>
-                                <strong>Werktempo:</strong>
+                                <strong>Werktempo</strong>
                             </p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="postureTempo1" name="studentPostureTempo" class="custom-control-input">
@@ -237,7 +262,7 @@
 
                         <div class="form-group">
                             <p>
-                                <strong>Zelfstandig werken in de klas:</strong>
+                                <strong>Zelfstandig werken in de klas</strong>
                             </p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="postureSelf1" name="studentPostureSelf" class="custom-control-input">
@@ -270,10 +295,10 @@
                         <h2>Hoe is uw indruk op school over de leerling?</h2>
                         <h4>Instelling</h4>
                     </div>
-                    <form>
+                    <form id="attitudeForm">
                         <div class="form-group">
                             <p>
-                                <strong>Motivatie:</strong>
+                                <strong>Motivatie</strong>
                             </p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="attitudeMotiv1" name="studentAttitudeMotiv" class="custom-control-input">
@@ -295,7 +320,7 @@
 
                         <div class="form-group">
                             <p>
-                                <strong>Doorzettingsvermogen:</strong>
+                                <strong>Doorzettingsvermogen</strong>
                             </p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="attitudeEndur1" name="studentAttitudeEndur" class="custom-control-input">
@@ -327,10 +352,10 @@
                         <h2>Hoe is uw indruk op school over de leerling?</h2>
                         <h4>Vaardigheden</h4>
                     </div>
-                    <form>
+                    <form id="skillsForm">
                         <div class="form-group">
                             <p>
-                                <strong>Communicatieve vaardigheden:</strong>
+                                <strong>Communicatieve vaardigheden</strong>
                             </p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="skillsCom1" name="studentSkillsCom" class="custom-control-input">
@@ -342,7 +367,7 @@
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="skillsCom3" name="studentSkillsCom" class="custom-control-input">
-                                <label class="custom-control-label" for="vCom3">Zwak</label>
+                                <label class="custom-control-label" for="skillsCom3">Zwak</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="skillsCom4" name="studentSkillsCom" class="custom-control-input">
@@ -352,7 +377,7 @@
 
                         <div class="form-group">
                             <p>
-                                <strong>Sociale vaardigheden:</strong>
+                                <strong>Sociale vaardigheden</strong>
                             </p>
                             <div class="custom-control custom-radio custom-control-inline">
                                 <input type="radio" id="skillSocial1" name="studentSkillsSocial" class="custom-control-input">
@@ -549,13 +574,13 @@
         <div id="snackbar">Het formulier is verstuurt</div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="jquery-3.2.1.js"></script>
     <script src="jquery.validate.js"></script>
     <script src="script/next.js"></script>
     <script src="script/previous.js"></script>
