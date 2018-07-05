@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     $("#button-1").click(function() {
         $("#permittedShowcase-1").append("<option>" + $("#permissionInput-1").val() + "</option>");
         $("#permissionInput-1").val('')

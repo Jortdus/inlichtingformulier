@@ -4,13 +4,13 @@ $(document).ready(function () {
 
     $("#whoForm").validate({
         rules: {
-            name : {
+            name: {
                 required: true,
                 minlength: 3,
             }
         },
         messages: {
-            name : {
+            name: {
                 required: "Dit veld is verplicht",
                 minlength: "Vul tenminste 3 characters in",
             }
@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     $("#educationForm").validate({
         rules: {
-            studentEducation : {
+            studentEducation: {
                 required: true,
             }
         },
@@ -27,42 +27,42 @@ $(document).ready(function () {
 
     $("#vmboForm").validate({
         rules: {
-            vmboLevel : {
+            vmboLevel: {
                 required: true,
             },
-            vmboSector : {
+            vmboSector: {
                 required: true,
             },
-            lwoo : {
+            lwoo: {
                 required: true,
             },
-            mviYesOrNo : {
-                required: true,     
+            mviYesOrNo: {
+                required: true,
             },
-            mviIfYes : {
-                required: function(element) {
-                    if($("#mviChoice option:selected").text() == 'Ja') {
+            mviIfYes: {
+                required: function (element) {
+                    if ($("#mviChoice option:selected").text() == 'Ja') {
                         return true;
                     } else {
                         return false;
                     }
-                } 
+                }
             },
         },
         messages: {
-            vmboLevel : {
+            vmboLevel: {
                 required: "Dit veld is verplicht",
             },
-            vmboSector : {
+            vmboSector: {
                 required: "Dit veld is verplicht",
             },
-            lwoo : {
+            lwoo: {
                 required: "Dit veld is verplicht",
             },
-            mviYesOrNo : {
-                required: "Dit veld is verplicht",     
+            mviYesOrNo: {
+                required: "Dit veld is verplicht",
             },
-            mviIfYes : {
+            mviIfYes: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -70,12 +70,12 @@ $(document).ready(function () {
 
     $("#havoForm").validate({
         rules: {
-            transitionHavo : {
+            transitionHavo: {
                 required: true,
             },
         },
         messages: {
-            transitionHavo : {
+            transitionHavo: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -83,12 +83,12 @@ $(document).ready(function () {
 
     $("#vwoForm").validate({
         rules: {
-            transitionVwo : {
+            transitionVwo: {
                 required: true,
             },
         },
         messages: {
-            transitionVwo : {
+            transitionVwo: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -96,18 +96,18 @@ $(document).ready(function () {
 
     $("#mboForm").validate({
         rules: {
-            studentEducationLevel : {
+            studentEducationLevel: {
                 required: true,
             },
-            studentEducationRoad : {
+            studentEducationRoad: {
                 required: true,
             },
         },
         messages: {
-            studentEducationLevel : {
+            studentEducationLevel: {
                 required: "Dit veld is verplicht",
             },
-            studentEducationRoad : {
+            studentEducationRoad: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -115,12 +115,12 @@ $(document).ready(function () {
 
     $("#otherForm").validate({
         rules: {
-            studentEducationOther : {
+            studentEducationOther: {
                 required: true,
             },
         },
         messages: {
-            studentEducationOther : {
+            studentEducationOther: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -128,24 +128,24 @@ $(document).ready(function () {
 
     $("#postureForm").validate({
         rules: {
-            studentPostureConc : {
+            studentPostureConc: {
                 required: true,
             },
-            studentPostureTempo : {
+            studentPostureTempo: {
                 required: true,
             },
-            studentPostureSelf : {
+            studentPostureSelf: {
                 required: true,
             }
         },
         messages: {
-            studentPostureConc : {
+            studentPostureConc: {
                 required: "Dit veld is verplicht",
             },
-            studentPostureTempo : {
+            studentPostureTempo: {
                 required: "Dit veld is verplicht",
             },
-            studentPostureSelf : {
+            studentPostureSelf: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -153,18 +153,18 @@ $(document).ready(function () {
 
     $("#attitudeForm").validate({
         rules: {
-            studentAttitudeMotiv : {
+            studentAttitudeMotiv: {
                 required: true,
             },
-            studentAttitudeEndur : {
+            studentAttitudeEndur: {
                 required: true,
             },
         },
         messages: {
-            studentAttitudeMotiv : {
+            studentAttitudeMotiv: {
                 required: "Dit veld is verplicht",
             },
-            studentAttitudeEndur : {
+            studentAttitudeEndur: {
                 required: "Dit veld is verplicht",
             },
         },
@@ -172,20 +172,114 @@ $(document).ready(function () {
 
     $("#skillsForm").validate({
         rules: {
-            studentSkillsCom : {
+            studentSkillsCom: {
                 required: true,
             },
-            studentSkillsSocial : {
+            studentSkillsSocial: {
                 required: true,
             },
         },
         messages: {
-            studentSkillsCom : {
+            studentSkillsCom: {
                 required: "Dit veld is verplicht",
             },
-            studentSkillsSocial : {
+            studentSkillsSocial: {
                 required: "Dit veld is verplicht",
             },
+        },
+    });
+
+    $("#restrictionOne").validate({
+        rules: {
+            restrictionYesNo: {
+                required: true,
+            },
+            restrictionSpecial: {
+                required: true,
+            },
+            restrictionDyslexic: {
+                required: true,
+            },
+        },
+        messages: {
+            restrictionYesNo: {
+                required: "Dit veld is verplicht",
+            },
+            restrictionSpecial: {
+                required: "Dit veld is verplicht",
+            },
+            restrictionDyslexic: {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#restrictionTwo").validate({
+        rules: {
+            restrictionDyscalculie: {
+                required: true,
+            },
+            restrictionZAT: {
+                required: true,
+            },
+        },
+        messages: {
+            restrictionDyscalculie: {
+                required: "Dit veld is verplicht",
+            },
+            restrictionZAT: {
+                required: "Dit veld is verplicht",
+            },
+        },
+    });
+
+    $("#mentorInfo").validate({
+        rules: {
+            nameMentor: {
+                required: true,
+            },
+            genderMentor: {
+                required: true,
+            },
+            telContactYesNo: {
+                required: true,
+            },
+            functionMentor: {
+                required: true,
+            },
+            emailMentor: {
+                required: true,
+            },
+            nameSchool: {
+                required: true,
+            },
+            placeSchool: {
+                required: true,
+            },
+        },
+        messages: {
+            nameMentor: {
+                required: "Dit veld is verplicht",
+            },
+            genderMentor: {
+                required: "Dit veld is verplicht",
+            },
+            telContactYesNo: {
+                required: "Dit veld is verplicht",
+            },
+            functionMentor: {
+                required: "Dit veld is verplicht",
+            },
+            emailMentor: {
+                required: "Dit veld is verplicht",
+            },
+            nameSchool: {
+                required: "Dit veld is verplicht",
+            },
+            placeSchool: {
+                required: "Dit veld is verplicht",
+            },
+
         },
     });
 
@@ -194,13 +288,13 @@ $(document).ready(function () {
         if ($("#whoForm").valid() == true) {
             $(".main.who").hide()
             $(".main.study").show()
-        } 
+        }
     });
 
     $("#studentEducation").change(function () {
-        $whatEducation = $("#studentEducation option:selected").text();        
+        $whatEducation = $("#studentEducation option:selected").text();
 
-        if ($("#educationForm").valid() == true)  {
+        if ($("#educationForm").valid() == true) {
             if ($whatEducation == 'VMBO') {
                 $(".havo, .vwo, .mbo, .other").hide();
                 $(".vmbo").show();
@@ -288,8 +382,17 @@ $(document).ready(function () {
     });
 
     $("#restrictionOne-button-next").click(function () {
-        $(".restrictionOne").hide();
-        $(".restrictionTwo").show();
+        if ($("#restrictionOne").valid() == true) {
+            $(".restrictionOne").hide();
+            $(".restrictionTwo").show();
+        }
+    });
+
+    $("#restrictionTwo-button-next").click(function () {
+        if ($("#restrictionTwo").valid() == true) {
+            $(".main.special").hide()
+            $(".main.you").show()
+        }
     });
 
     $("#otherCareForm input").change(function () {
@@ -301,20 +404,17 @@ $(document).ready(function () {
         }
     });
 
-    $("#restrictionTwo-button-next").click(function () {
-        $(".main.special").hide()
-        $(".main.you").show()
+    $("#send-button").click(function () {
+
+        if ($("#mentorInfo").valid() == true) {
+            $("#snackbar").addClass("show");
+            setTimeout(function () { $("#snackbar").removeClass("show") }, 3000);
+            setTimeout(function () {
+                $(".main.you").hide();
+                $(".main.who").show();
+            }, 2000);
+        }
     });
 
-    $("#send-button").click(function ( ) {   
-        $("#snackbar").addClass("show");
-        setTimeout(function() { $("#snackbar").removeClass("show") }, 3000);
-        setTimeout(function() { 
-            $(".main.you").hide();
-            $(".main.who").show(); 
-        }, 2000);
-        
-    });
-    
 });
 

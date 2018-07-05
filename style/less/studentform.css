@@ -32,16 +32,24 @@ html label {
   }
 }
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   body {
-    padding: 5px;
+    overflow: visible;
   }
+}
+.container-main {
+  width: 100%;
+  height: 100%;
 }
 .main {
   margin: 5px auto 5px auto;
   width: 50%;
+  height: 100%;
 }
 .main button,
 .main button:hover,
@@ -62,8 +70,7 @@ body {
 }
 @media (max-width: 768px) {
   .main {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
     border: none;
     min-height: 0;
     box-shadow: none;
@@ -148,6 +155,38 @@ label[class=error] {
 }
 .main.impression label[class=error] {
   margin-top: 30px;
+}
+@media (max-width: 768px) {
+  .main.impression label[class=error] {
+    margin-top: 130px;
+  }
+}
+.main.special form[id=restrictionOne] label[class=error] {
+  margin-top: 6%;
+}
+@media (max-width: 768px) {
+  .main.special form[id=restrictionOne] label[class=error] {
+    margin-top: 20%;
+  }
+}
+.main.special form[id=restrictionTwo] label[class=error] {
+  margin-top: 6%;
+}
+@media (max-width: 768px) {
+  .main.special form[id=restrictionTwo] label[class=error] {
+    margin-top: 20%;
+  }
+}
+#telContactYesNo-error {
+  top: 20px;
+}
+@media (max-width: 768px) {
+  .studentform.multiplechoice .form-group {
+    width: 83%;
+  }
+  .studentform.multiplechoice .form-group .custom-radio {
+    margin-bottom: 10px;
+  }
 }
 #snackbar {
   font-family: 'Montserrat', sans-serif;

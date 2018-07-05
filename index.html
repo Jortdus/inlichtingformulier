@@ -11,16 +11,17 @@
         crossorigin="anonymous">
     <title>Inlichtingformulier schooljaar 2018-2019</title>
 </head>
-        <small id="adminLink">
-            <a id="adminLink" href="/login.html">Beheer</a>
-        </small>
+<small id="adminLink">
+    <a id="adminLink" href="/login.html">Beheer</a>
+</small>
+
 <body>
     <div class="container-main">
 
         <div class="main who hidden">
             <div class="studentform">
                 <div class="form-toptext">
-                    <h1>Inlichtingformulier</h1> 
+                    <h1>Inlichtingformulier</h1>
                     <h2>Mediacollege</h2>
                     <p>Graag volledig invullen</p>
                 </div>
@@ -75,7 +76,7 @@
                             </select>
                         </div>
 
-                        <div class="form-group">    
+                        <div class="form-group">
                             <label for="lwoo">LWOO</label>
                             <select name="lwoo" class="form-control" id="lwoo">
                                 <option value="">...</option>
@@ -102,7 +103,7 @@
                                 <option value="1">Nee</option>
                                 <option value="2">Ja</option>
                             </select>
-                            
+
                             <div class="mviIfYes hidden" id="ifYes" class="form-group">
                                 <label for="nameStudent"></label>
                                 <input type="text" name="mviIfYes" class="form-control" id="mviIfYes" placeholder="Keuzevak..">
@@ -128,12 +129,12 @@
                         </div>
 
                         <div class="form-group">
-                           <label for="transitionHavo">Overgangsbewijs van leerjaar:</label>
-                           <select class="form-control" name="transitionHavo" id="transitionYearHavo">
-                               <option value="">...</option>
-                               <option value="1">3 naar 4</option>
-                               <option value="2">4 naar 5</option>
-                           </select>
+                            <label for="transitionHavo">Overgangsbewijs van leerjaar:</label>
+                            <select class="form-control" name="transitionHavo" id="transitionYearHavo">
+                                <option value="">...</option>
+                                <option value="1">3 naar 4</option>
+                                <option value="2">4 naar 5</option>
+                            </select>
                         </div>
                     </form>
                     <footer class="footer-flex">
@@ -178,7 +179,7 @@
                         </div>
                         <div class="form-group">
                             <label for="studentEducation">Leerweg</label>
-                            <select class="form-control" id="studentEducationRoadchoice"  name="studentEducationRoad">
+                            <select class="form-control" id="studentEducationRoadchoice" name="studentEducationRoad">
                                 <option value="">...</option>
                                 <option value="1">BOL</option>
                                 <option value="2">BBL</option>
@@ -207,7 +208,7 @@
         </div>
 
         <div class="main impression hidden">
-            <div class="studentform">
+            <div class="studentform multiplechoice">
                 <div class="posture">
                     <div class="form-toptext">
                         <h2>Hoe is uw indruk op school over de leerling?</h2>
@@ -414,7 +415,7 @@
                 <div class="form-toptext">
                     <h2>Bijzonderheden (i.v.m. de mogelijkheden tot extra begeleiding)</h2>
                 </div>
-                <form>
+                <form id="restrictionOne">
                     <div class="restrictionOne hidden">
                         <div class="form-group">
                             <label for="studentRestriction">Heeft de leerling een aandoening en/of beperking die van invloed op de studie is of kan zijn?</label>
@@ -459,6 +460,8 @@
                             <button type="button" id="restrictionOne-button-next" class="btn right">Volgende</button>
                         </footer>
                     </div>
+                </form>
+                <form id="restrictionTwo">
                     <div class="restrictionTwo hidden">
                         <div class="form-group">
                             <label for="studentRestriction">Heeft de leerling dyscalculie?
@@ -486,20 +489,20 @@
                                 <label class="custom-control-label" for="restrictionZATNo">Nee</label>
                             </div>
                         </div>
+                        <div id="otherCareForm">
+                            <div class="form-group">
+                                <label>Ontvangt de leerling nog andere zorg?</label>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="otherCareYes" name="otherCareYesNo" value="1" class="custom-control-input">
+                                    <label class="custom-control-label" for="otherCareYes">Ja</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="otherCareNo" name="otherCareYesNo" value="2" class="custom-control-input">
+                                    <label class="custom-control-label" for="otherCareNo">Nee</label>
+                                </div>
+                            </div>
+                        </div>
                 </form>
-                <div id="otherCareForm">
-                    <div class="form-group">
-                        <label>Ontvangt de leerling nog andere zorg?</label>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="otherCareYes" name="otherCareYesNo" value="1" class="custom-control-input">
-                            <label class="custom-control-label" for="otherCareYes">Ja</label>
-                        </div>
-                        <div class="custom-control custom-radio">
-                            <input type="radio" id="otherCareNo" name="otherCareYesNo" value="2" class="custom-control-input">
-                            <label class="custom-control-label" for="otherCareNo">Nee</label>
-                        </div>
-                    </div>
-                </div>
                 <form>
                     <div class="otherCare hidden">
                         <div class="form-group">
@@ -521,15 +524,15 @@
                 <div class="form-toptext">
                     <h2>Uw gegevens</h2>
                 </div>
-                <form>
+                <form id="mentorInfo">
                     <div class="form-group row">
                         <div class="col">
                             <label for="nameMentor">Naam</label>
-                            <input type="text" class="form-control" id="nameMentor" placeholder="...">
+                            <input type="text" class="form-control" id="nameMentor" name="nameMentor" placeholder="...">
                         </div>
                         <div class="col">
                             <label for="genderMentor">Gender</label>
-                            <select class="form-control">
+                            <select class="form-control" name="genderMentor">
                                 <option selected>...</option>
                                 <option>Man</option>
                                 <option>Vrouw</option>
@@ -538,19 +541,19 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="functionMentor" placeholder="Functie...">
+                        <input type="text" class="form-control" id="functionMentor" name="functionMentor" placeholder="Functie...">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" id="emailMentor" placeholder="E-mail...">
+                        <input type="email" class="form-control" id="emailMentor" name="emailMentor" placeholder="E-mail...">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="nameSchool" placeholder="Naam school...">
+                        <input type="text" class="form-control" id="nameSchool" name="nameSchool" placeholder="Naam school...">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="placeSchool" placeholder="Plaats...">
+                        <input type="text" class="form-control" id="placeSchool" name="placeSchool" placeholder="Plaats...">
                     </div>
                     <div class="form-group">
-                        <input type="tel" class="form-control" id="telMentor" placeholder="Telefoon nummer...">
+                        <input type="number" class="form-control" id="telMentor" placeholder="Telefoon nummer...">
                     </div>
                     <div class="form-group">
                         <label class="custom-control-inline" for="telContact">Telefonisch contact gewenst</label>
@@ -574,7 +577,8 @@
         <div id="snackbar">Het formulier is verstuurt</div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

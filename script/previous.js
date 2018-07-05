@@ -7,7 +7,7 @@ $(document).ready(function () {
     });
 
     $("#posture-button-back").click(function () {
-        $(".posture").hide();
+        $(".main.impression").hide();
         $(".main.study").show();
     });
 
@@ -17,20 +17,19 @@ $(document).ready(function () {
     });
 
     $("#skills-button-back").click(function () {
+        $(".skills").hide();
+        $(".attitude").show();
+    });
+
+    $("#restrictionOne-button-back").click(function () {
         $(".main.impression").show();
         $(".main.special").hide();
         $(".restrictionOne").hide();
     });
 
-    $("#restrictionOne-button-back").click(function () {
+    $("#restrictionTwo-button-back").click(function () {
         $(".restrictionOne").show();
         $(".restrictionTwo").hide();
     });
-
-    $("#restrictionTwo-button-back").click(function () {
-        $(".main.special").show()
-        $(".main.you").hide()
-    });
-
 });
 
